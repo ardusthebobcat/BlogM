@@ -1,0 +1,3 @@
+<% @tags.each do |tag| %>
+  #<%= tag.title %><%= link_to "[x]", tag_path(tag.id), :data=>{:confirm => "Delete this?", :method=>"delete"} %><br>
+<% end %>

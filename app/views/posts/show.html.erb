@@ -1,7 +1,15 @@
-<%= @post.title %>
+Title: <%= @post.title %>
 <br>
-<%= @post. author %>
+Author: <%= @post.author %>
 
+<br>
+<% if @post.tags %> Tags:
+  <% @post.tags.each do |tag| %>
+    #<%= link_to tag.title, edit_post_tag_path(@post.id, tag.id) %>
+  <% end %>
+<% end %>
+<br>
+<%= link_to "Add Tag to Post", new_post_tag_path(@post) %>
 <br><hr><br>
-<%= link_to "EDIT", edit_post_path(@post.id) %>  
+<%= link_to "EDIT", edit_post_path(@post.id) %>
 <%= link_to "DELETE", post_path(@post.id), :data => {:confirm => "Are you sure you want to delete this?", :method =>"delete"} %>
