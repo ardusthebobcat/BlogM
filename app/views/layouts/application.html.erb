@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlogM</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1>BlogM - Got thoughts? Blog-em</h1>
+  <nav>
+    <hr>
+    <ul>
+      <%= link_to "Home", root_path %>
+      <%= link_to "Add Post", new_post_path() %>
+    </ul>
+    <hr>
+  </nav>
+
+<%= yield %>
+
+</body>
+</html>

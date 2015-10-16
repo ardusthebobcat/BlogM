@@ -1,0 +1,7 @@
+<%= @post.title %>
+<br>
+<%= @post. author %>
+
+<br><hr><br>
+<%= link_to "EDIT", edit_post_path(@post.id) %>  
+<%= link_to "DELETE", post_path(@post.id), :data => {:confirm => "Are you sure you want to delete this?", :method =>"delete"} %>

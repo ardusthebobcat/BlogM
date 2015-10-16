@@ -1,0 +1,5 @@
+<% if @posts %>
+  <% @posts.each do |post| %>
+    <%= link_to post.title, post_path(post.id) %> <%= link_to "+/-", edit_post_path(post.id) %>  <%= link_to "[x]", post_path(post.id), :data => {:method =>"delete"} %><li>-<%= post.author %></li>
+  <% end %>
+<% end %>
